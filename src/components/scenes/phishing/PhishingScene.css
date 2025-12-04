@@ -1,0 +1,146 @@
+/* ===============
+    MINI GAME
+=============== */
+.phishingGame-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xs);
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius-large);
+}
+
+/* === Sea & Environment === */
+.phishing-sea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: crosshair;
+  background: linear-gradient(to bottom, #55e7f7 95%, #ebb626 10%);
+  touch-action: none;
+  /* Prevent touch scrolling */
+}
+
+.phishing-ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  pointer-events: none;
+}
+
+/* === Scuba Diver === */
+.scuba-diver {
+  position: absolute;
+  width: 100px;
+  pointer-events: none;
+  transition: top 0.1s linear, left 0.1s linear;
+}
+
+/* === Fish === */
+.fish-image {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.fish-health-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: var(--border-radius-small);
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.fish-health {
+  height: 100%;
+  border-radius: var(--border-radius-small);
+  transition: width var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+/* === Fishing Rod === */
+.fishing-line {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  background-color: black;
+}
+
+.fishing-bait {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+/* === Bait & Messages === */
+.bait-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.bait-answer-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+/* === Score === */
+.fish-score {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 0px 0px 20px 0px;
+  width: 150px;
+  gap: var(--spacing-xs);
+  pointer-events: none;
+}
+
+.fish-score-frame {
+  width: 40%;
+  border-radius: 15%;
+  background: #55e7f7;
+}
+
+.fish-score-frame img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  overflow: hidden;
+}
+
+.fish-score-health {
+  flex-grow: 1;
+  border-radius: var(--border-radius-small);
+  background-color: white;
+  border: 1px solid;
+  height: 20px;
+}
+
+.fish-score-health-bar {
+  height: 20px;
+  border-radius: var(--border-radius-small);
+  transition: width var(--transition-speed) ease-in-out;
+}
+
+.fish-score-health span {
+  color: white;
+  text-align: center;
+  display: block;
+}

@@ -1,0 +1,413 @@
+@import url("../../../app/style.css");
+.insta-frame {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  color: var(--color);
+  position: relative;
+}
+
+.insta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.insta-header-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.insta-header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-round);
+  background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--f-weight-bold);
+  color: var(--dark-blue);
+}
+
+.insta-header-profile strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.insta-header-profile span {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(15, 23, 42, 0.55);
+}
+
+.insta-options {
+  font-size: 1.2rem;
+  color: rgba(15, 23, 42, 0.35);
+}
+
+.insta-media {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 350px;
+  background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 10, 60, 0.65);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.insta-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.insta-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid rgba(224, 224, 224, 0.08);
+}
+
+.insta-action-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) var(--transition-timing);
+}
+
+.insta-comments {
+  flex: 1;
+  padding: var(--spacing-sm);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.insta-comment {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.insta-comment-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius-round);
+  background-color: rgba(124, 145, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rgba(0, 10, 60, 0.75);
+}
+
+.insta-comment-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.insta-comment-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.85rem;
+}
+
+.insta-comment-username {
+  font-weight: var(--f-weight-bold);
+  color: var(--color);
+}
+
+.insta-comment-time {
+  font-size: 0.7rem;
+  color: rgba(224, 224, 224, 0.6);
+}
+
+.insta-comment-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--color);
+}
+
+.insta-comment-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  font-size: 0.75rem;
+  color: var(--a-color);
+  font-weight: 600;
+}
+
+.insta-comment-actions button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chat-continue {
+  padding: var(--spacing-sm);
+  border-top: 1px solid rgba(224, 224, 224, 0.08);
+  background-color: var(--bg-color);
+}
+
+.notification-banner {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: 50%;
+  transform: translate(-50%, -140%);
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  padding: var(--spacing-sm) 20px;
+  border-radius: var(--border-radius-large);
+  width: calc(100% - 40px);
+  max-width: 360px;
+  background-color: var(--bg-color);
+  color: var(--color);
+  z-index: 90;
+  opacity: 0;
+}
+
+.notification-banner.slide-in {
+  animation: slide-in var(--transition-speed) var(--transition-timing) forwards;
+}
+
+.notification-banner.slide-out {
+  animation: slide-out var(--transition-speed) var(--transition-timing) forwards;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.notification-title {
+  font-weight: var(--f-weight-bold);
+  font-size: 1.05rem;
+  text-transform: capitalize;
+}
+
+.notification-text {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba(224, 224, 224, 0.85);
+}
+
+.insta-action-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: var(--bg-overlay);
+  pointer-events: none;
+}
+
+.insta-action-card {
+  pointer-events: auto;
+  background-color: var(--bg-color);
+  border: 1px solid rgba(124, 145, 255, 0.35);
+  border-radius: var(--border-radius-large);
+  max-width: 420px;
+  width: 100%;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  text-align: center;
+  color: var(--color);
+}
+
+.insta-action-card h2 {
+  font-size: 1.4rem;
+  font-weight: var(--f-weight-bold);
+}
+
+.insta-action-card p {
+  margin: 0;
+  color: rgba(224, 224, 224, 0.75);
+}
+
+.insta-action-grid {
+  display: grid;
+  gap: var(--spacing-sm);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.insta-action-choice {
+  border: 1px solid rgba(124, 145, 255, 0.4);
+  border-radius: var(--border-radius-medium);
+  padding: var(--spacing-sm);
+  font-size: var(--spacing-sm);
+  font-weight: var(--f-weight-medium);
+  text-transform: capitalize;
+  background: rgba(25, 63, 255, 0.18);
+  color: var(--color);
+  cursor: pointer;
+  transition: background-color var(--transition-speed) var(--transition-timing),
+    border-color var(--transition-speed) var(--transition-timing),
+    transform var(--transition-speed) var(--transition-timing);
+}
+
+.insta-action-choice:hover,
+.insta-action-choice:focus-visible {
+  background: rgba(25, 63, 255, 0.32);
+  border-color: var(--accent-blue);
+  outline: 2px solid rgba(25, 63, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.insta-action-choice:active {
+  background: rgba(25, 63, 255, 0.45);
+  transform: translateY(0);
+}
+
+.insta-action-choice:disabled {
+  background: rgba(25, 63, 255, 0.05);
+  color: rgba(224, 224, 224, 0.5);
+  cursor: not-allowed;
+  border-color: rgba(124, 145, 255, 0.2);
+  transform: none;
+}
+
+.insta-action-choice:disabled:hover,
+.insta-action-choice:disabled:focus-visible {
+  background: rgba(25, 63, 255, 0.05);
+  border-color: rgba(124, 145, 255, 0.2);
+  outline: none;
+  transform: none;
+}
+
+@media (max-width: 480px) {
+  .insta-actions {
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+  }
+
+  .insta-action-button {
+    padding: var(--spacing-xs) 10px;
+    font-size: 0.85rem;
+  }
+
+  .insta-comments {
+    padding: var(--spacing-sm);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -140%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -140%);
+  }
+}
+
+/* ===============
+    MINI GAME
+=============== */
+.photosGame-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-sm);
+}
+
+.to-post-or-not-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: var(--spacing-sm);
+}
+
+.image-with-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-medium);
+  text-align: center;
+  width: 80%;
+}
+
+.game-card {
+  height: 50vh;
+  object-fit: contain;
+  border-radius: var(--border-radius-large);
+  width: 30vw;
+}
+
+.game-card.correct {
+  outline: 5px solid green;
+}
+
+.game-card.incorrect {
+  outline: 5px solid red;
+}

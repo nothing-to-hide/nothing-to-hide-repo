@@ -1,0 +1,23 @@
+.achievement-unlocked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.achievement-unlocked img {
+    width: 80%;
+    max-width: 300px;
+    min-width: 50px;
+}
+
+/* phone */
+@media only screen and (max-width: 1023px) {
+    .achievement-unlocked img {
+        width: 25%;
+    }
+
+    .achievement-unlocked {
+        margin-top: 8%;
+    }
+}

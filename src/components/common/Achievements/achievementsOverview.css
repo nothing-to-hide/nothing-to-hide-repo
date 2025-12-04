@@ -1,0 +1,70 @@
+.achievements-book-wrapper {
+  position: relative;
+}
+
+.achievements-book {
+  width: 100%;
+}
+
+.achievements-list {
+  position: absolute;
+  top: 3%;
+  bottom: 23%;
+  left: 9%;
+  right: 15%;
+  display: flex;
+  gap: 12%;
+}
+
+.achievements-column {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  justify-items: center;
+  align-items: start;
+}
+
+.achievement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85em;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.achievement-img {
+  width: clamp(40px, 10vw, 100px);
+  height: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.achievement-img-small {
+  width: clamp(40px, 10vw, 80px);
+}
+
+.achievement span {
+  color: black;
+}
+
+.achievement-passed {
+  margin-top: auto;
+  padding-top: 1vh;
+}
+
+.achievement-avatar-image {
+  width: 30%;
+  position: absolute;
+  background: #3f3f3d;
+  border-radius: 50%;
+  bottom: 10%;
+  left: 60%;
+}
+
+.achievement-base-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}

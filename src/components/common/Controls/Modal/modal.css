@@ -1,0 +1,106 @@
+@import url("../../../../app/style.css");
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s var(--transition-timing);
+  z-index: 1000;
+}
+
+.modal-container {
+  background: var(--bg-color);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-md);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  animation: popUp 0.3s var(--transition-timing);
+  transform-origin: center;
+  color: var(--color);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* phone */
+@media only screen and (max-width: 1023px) {
+  .modal-container {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    overflow: hidden;
+  }
+}
+
+/* desktop & tablet */
+@media only screen and (min-width: 1024px) {
+  .modal-container {
+    max-width: 500px;
+  }
+}
+
+.modal-title {
+  color: var(--color);
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0;
+  font-weight: var(--f-weight-bold);
+}
+
+.modal-content {
+  color: var(--color);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-xs);
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xs);
+}
+
+/* phone */
+@media only screen and (max-width: 1023px) {
+  .modal-button:hover {
+    transform: scale(1);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

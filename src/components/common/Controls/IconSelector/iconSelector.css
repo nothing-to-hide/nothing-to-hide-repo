@@ -1,0 +1,73 @@
+@import url("../../../../app/style.css");
+
+.icon-selector-container {
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-selector-label {
+  margin-bottom: var(--spacing-md);
+  font-weight: bold;
+  color: white;
+}
+
+.icon-selector-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.icon-selector-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-round);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.1s ease;
+  color: white;
+  overflow: hidden;
+}
+
+.icon-svg-container {
+  height: 100%;
+  width: 100%;
+}
+
+.icon-svg-container svg {
+  height: 100%;
+  width: 100%;
+}
+
+.icon-selector-item:hover {
+  transform: scale(1.1);
+}
+
+.icon-selector-item:focus {
+  transform: scale(1.1);
+}
+
+.icon-selector-item:focus-visible {
+  outline: 3px solid var(--light-blue);
+  outline-offset: 3px;
+  background: transparent;
+  transform: scale(1.05);
+}
+
+.icon-selector-item.selected {
+  background: var(--light-blue);
+  outline: none;
+  transform: scale(1.1);
+}
+
+.icon-selector-error {
+  color: var(--error);
+  margin-top: var(--spacing-xs);
+  font-size: 0.875rem;
+}

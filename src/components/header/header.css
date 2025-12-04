@@ -1,0 +1,139 @@
+@import url("../../app/style.css");
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  z-index: 1000;
+  background: var(--bg-color);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: var(--color);
+  padding: var(--spacing-xs);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.header-divider {
+  width: 2px;
+  height: 3rem;
+  background: var(--light-blue);
+  opacity: 0.5;
+  margin: 0 var(--spacing-xs);
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  gap: var(--spacing-xs);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 var(--spacing-xs);
+  border-radius: var(--border-radius-medium);
+}
+
+.header-icon img {
+  height: 2rem;
+  width: auto;
+}
+
+.game-points {
+  cursor: default;
+}
+
+.player-info {
+  cursor: default;
+  gap: var(--spacing-sm);
+}
+
+.player-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--light-blue);
+  object-fit: cover;
+}
+
+.player-name {
+  font-size: 1.5rem;
+}
+
+/* Settings */
+.settings-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settings-audio-row {
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.settings-audio-row .slider-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: var(--spacing-xs);
+}
+
+.settings-audio-row .slider-container .slider-label {
+  padding-right: var(--spacing-sm);
+}
+
+.settings-dialog-content .icon-selector-container {
+  margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
+}
+
+.settings-dialog-content .button {
+  margin: var(--spacing-xs) 0 0 0;
+}
+
+hr {
+  width: 100%;
+  margin: 6.9px;
+  border-color: rgba(128, 128, 128, 0.42);
+}
+
+/* desktop & tablet */
+@media (min-width: 1024px) {
+  .header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs);
+    z-index: 1000;
+    background: var(--bg-color);
+    border-radius: 0px 0px 0px 20px;
+    /* border: 1px solid; */
+    border-top: none;
+    border-right: none;
+    color: var(--color);
+  }
+
+  .header-icon img {
+    height: 3rem;
+    width: auto;
+  }
+
+  .header-divider {
+    height: 4rem;
+  }
+}

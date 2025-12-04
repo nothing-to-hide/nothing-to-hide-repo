@@ -1,0 +1,39 @@
+.text-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-label {
+  margin-bottom: var(--spacing-xs);
+  font-weight: bold;
+  color: white;
+}
+
+.text-field {
+  border: 3px solid transparent;
+  width: calc(85% - 10px);
+  border-radius: var(--border-radius-large);
+  background: white;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  transition: border var(--transition-speed) ease;
+}
+
+.text-field:focus {
+  border-color: var(--light-blue);
+  border-width: 3px;
+  outline: none;
+}
+
+.text-field-error {
+  border-color: var(--error);
+}
+
+.text-error {
+  color: var(--error);
+  margin-top: var(--spacing-xs);
+  font-size: 0.875rem;
+}

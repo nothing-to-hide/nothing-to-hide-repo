@@ -1,0 +1,91 @@
+/*
+ * ToDo: add progress-bar colors 🟠 | added with --success && --error -> not ideal
+ *
+ */
+
+/*-- global variables --*/
+:root {
+  /* typography */
+  --ff-sans-serif: "Fredoka Font", "Poppins Font", sans-serif;
+  --f-weight: 400;
+  --f-weight-medium: 500;
+  --f-weight-bold: 700;
+
+  /* theme configuration */
+  --color-scheme: dark; /* default dark theme */
+
+  /* text colors */
+  --color: #e0e0e0;
+  --color-dark: #242424;
+
+  /* background colors */
+  --bg-color: #1e1e1e;
+  --bg-overlay: #00000080;
+  --bg-dark-blue: #000A3C;
+
+  /* text rendering */
+  --txt-rendering: optimizeLegibility;
+  --wk-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+
+  /* link colors */
+  --a-hover: #7c91ff;
+  --a-color: #b0c2ff;
+
+  /* button colors */
+  --btn-bg: #4a64ff;
+  --btn-border-hover: #19b2ff;
+
+  /* primary blue palette */
+  --primary-blue: #193FFF;
+  --light-blue: #7C91FF;
+  --dark-blue: #000A3C;
+  --accent-blue: #19B2FF;
+
+  /* status colors */
+  --success: #006400;
+  --error: #820013;
+
+  /* border radius */
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px;
+  --border-radius-large: 15px;
+  --border-radius-xl: 30px;
+  --border-radius-round: 50%;
+
+  /* spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;   /*16px*/
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* transitions */
+  --transition-speed: 0.3s;
+  --transition-timing: ease;
+}
+
+/*---------- CSS COMPONENTS -------------*/
+
+/*-- universal selector --*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-sans-serif);
+  font-weight: var(--f-weight);
+}
+
+@font-face {
+  font-family: "Fredoka Font";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Fredoka Font"), url("/assets/fonts/Fredoka.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins Font";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins Font"), url("/assets/fonts/Poppins-Light.ttf") format("truetype");
+}

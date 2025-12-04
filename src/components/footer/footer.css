@@ -1,0 +1,48 @@
+@import url("../../app/style.css");
+
+.footer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    background: var(--bg-color);
+    color: var(--color);
+    height: 2rem;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-button:hover {
+    color: var(--a-hover);
+}
+
+.spacer {
+    display: none;
+}
+
+/* desktop & tablet */
+@media (min-width: 1024px) {
+    .spacer {
+        display: flex;
+    }
+
+    .footer {
+        height: 4rem;
+    }
+}

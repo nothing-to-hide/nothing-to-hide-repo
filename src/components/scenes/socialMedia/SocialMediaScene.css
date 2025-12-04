@@ -1,0 +1,67 @@
+/* ===============
+    MINI GAME
+=============== */
+.socialMediaGame-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 90vw;
+  height: 75vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color);
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-large);
+}
+
+/* desktop & tablet */
+@media only screen and (min-width: 1024px) {
+  .socialMediaGame-container {
+    width: 75vw;
+    height: 75vh;
+  }
+}
+
+.objectsearch {
+  min-height: 0;
+  align-self: center;
+  height: 100%;
+  position: relative;
+  aspect-ratio: 3 / 2;
+}
+
+.objectsearch-background {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.hidden-object {
+  position: absolute;
+}
+
+.objectsearch-controlbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--spacing-xs);
+  align-self: center;
+}
+
+.objectsearch-timer {
+  width: 78%;
+}
+
+.objectsearch-button {
+  width: 20%;
+}
+
+.objectsearch-score {
+  background-color: var(--bg-color);
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: var(--spacing-xs);
+}

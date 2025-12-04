@@ -1,0 +1,291 @@
+@import url("../../../app/style.css");
+
+.dialog-container {
+    position: fixed;
+    bottom: var(--spacing-2xl);
+    transform: translateX(-50%);
+    left: 50%;
+    width: 95%;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.dialog-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+}
+
+.dialog-avatar img {
+    width: 12vw;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.dialog-button {
+    width: 15vw;
+    justify-self: end;
+    transition: 0.5s;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+
+/* Narrator dialog styling */
+.narrator-container {
+    position: fixed;
+    bottom: var(--spacing-2xl);
+    transform: translateX(-50%);
+    left: 50%;
+    width: 95%;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.narrator-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+}
+
+.narrator-text {
+    color: var(--color);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.narrator-emphasis {
+    color: var(--color);
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Speech dialog styling */
+.speech-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* Two column grid: avatar | bubble */
+    grid-template-rows: auto auto;
+    grid-template-areas: "bubble bubble" "avatar button";
+    align-items: flex-end;
+    column-gap: var(--spacing-sm);
+    z-index: 10;
+    height: 55vh;
+    bottom: var(--spacing-lg);
+}
+
+.speech-avatar {
+    grid-area: avatar;
+    max-width: 70%;
+    max-width: 160px;
+    position: relative;
+    z-index: 20;
+    margin-top: 32px;
+    justify-self: left;
+}
+
+.speech-avatar img {
+    width: clamp(90px, 14vw, 300px);
+    object-fit: cover;
+    display: block;
+}
+
+.speech-bubble {
+    grid-area: bubble;
+    position: relative;
+    background-color: var(--bg-color);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-large);
+    max-width: 100%;
+    font-size: 1.1em;
+    line-height: 1.4;
+    color: var(--color);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    justify-self: center;
+    animation: bubbleAppear 0.3s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* Thought dialog styling */
+.thought-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* Two column grid: avatar | bubble */
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "bubble bubble"
+    "avatar button";
+    align-items: flex-end;
+    column-gap: var(--spacing-sm);
+    z-index: 10;
+    height: 55vh;
+    bottom: var(--spacing-lg);
+}
+
+.thought-avatar {
+    grid-area: avatar;
+    max-width: 70%;
+    position: relative;
+    z-index: 20;
+    margin-top: var(--spacing-lg);
+    justify-self: right;
+}
+
+.thought-avatar img {
+    width: clamp(90px, 14vw, 300px);
+    object-fit: cover;
+    display: block;
+}
+
+.thought-bubble {
+    grid-area: bubble;
+    position: relative;
+    background-color: var(--bg-color);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-medium);
+    max-width: 100%;
+    font-size: 1.1em;
+    line-height: 1.4;
+    color: var(--color);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    justify-self: center;
+    animation: bubbleAppear 0.3s ease-out 0.3s forwards;
+    opacity: 0;
+    z-index: 21;
+}
+
+.thought-avatar:before,
+.thought-avatar:after {
+    content: "";
+    position: absolute;
+    background: var(--bg-color);
+    border-radius: 50%;
+}
+
+@keyframes bubbleAppear {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* thought bubbles */
+.thought-avatar:before {
+  width: 15%;
+  height: 15%;
+  left: 15%;
+  top: -30%;
+  animation: bubbleAppear 0.2s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.thought-avatar:after {
+    width: 8%;
+    height: 8%;
+    left: 35%;
+    top: -10%;
+    animation: bubbleAppear 0.1s ease-out forwards;
+}
+
+.thought-text {
+    color: var(--color);
+}
+
+.thought-action {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: var(--spacing-xs);;
+}
+
+/*-- desktop view --*/
+@media (min-width: 1024px) {
+    /* narrator */
+    .narrator-text,
+    .narrator-emphasis {
+        font-size: 1.8rem;
+    }
+
+    /* dialog */
+    .dialog-container {
+        width: 70%;
+        bottom: 4rem;
+        font-size: 1.8rem;
+    }
+
+    /*narrator*/
+    .narrator-container {
+        width: 70%;
+        bottom: 4rem;
+        font-size: 1.8rem;
+    }
+
+    /* thought */
+    .thought-container {
+        width: 70%;
+        bottom: 4rem;
+        font-size: 1.8rem;
+    }
+
+    .thought-avatar:before {
+        top: -40%;
+        width: 15%;
+        height: 15%;
+    }
+
+    .thought-avatar:after {
+        top: -20%;
+        width: 10%;
+        height: 10%;
+    }
+
+    /* speech */
+    .speech-container {
+        width: 70%;
+        grid-template-columns: 1fr 3fr;
+        bottom: var(--spacing-2xl);
+        font-size: 1.8rem;
+    }
+
+    .speech-avatar {
+        max-width: unset;
+    }
+
+    .speech-avatar:before {
+        top: -40%;
+        width: 15%;
+        height: 15%;
+    }
+
+    .speech-avatar:after {
+        top: -20%;
+        width: 10%;
+        height: 10%;
+    }
+}

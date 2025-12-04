@@ -1,0 +1,111 @@
+@import url("../../app/style.css");
+
+.endScreen-achievements {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
+  gap: var(--spacing-xs);
+  justify-items: center;
+  align-items: start;
+  padding: var(--spacing-lg);
+}
+
+.endScreen-achievements span {
+  font-size: clamp(1em, 2vw, 2rem);
+  white-space: pre-wrap;
+}
+
+.endScreen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.endScreen-background-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+  PlayAgain.tsx
+*/
+
+.playAgain-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-frame {
+  width: 90vw;
+  max-width: 18rem;
+  aspect-ratio: 9 / 16;
+  background-color: var(--bg-color);
+  border: var(--border-radius-medium) solid var(--bg-overlay);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-sm);
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: all 0.3s ease;
+  justify-content: space-between;
+}
+
+.phone-speaker {
+  width: 4rem;
+  height: 0.5rem;
+  background-color: var(--color);
+  border-radius: var(--border-radius-medium);
+  margin: 0 auto var(--spacing-sm);
+  opacity: 0.5;
+}
+
+.phone-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.sparkle-out {
+  animation: blinkFade 2s ease-in-out forwards;
+}
+
+/* Landscape layout for smaller devices */
+@media (max-width: 1000px) and (orientation: landscape) {
+  .phone-frame {
+    width: 95vw;
+    aspect-ratio: 16 / 9;
+    max-height: 90vh;
+    padding: var(--spacing-sm);
+  }
+
+  .endScreen-achievements {
+    padding: var(--spacing-xs);
+  }
+}
+
+@keyframes blinkFade {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2); /* leicht grösser, kein Drehen */
+    filter: none;
+  }
+}

@@ -1,0 +1,27 @@
+@import url("../../../../app/style.css");
+
+.timebar-container {
+    height: 20px;
+    width: 100%;
+    margin: var(--spacing-xs);
+    font-size: 1rem;
+    background-color: var(--error);
+    border-radius: var(--border-radius-large);
+    align-self: center;
+    overflow: hidden;
+    text-align: right;
+}
+
+.dynamic-bar {
+    background-color: var(--success);
+    height: 100%;
+    transition: width 0.1s linear;
+}
+
+.timebar-avatar {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: black;
+    transition: width 0.1s linear;
+}

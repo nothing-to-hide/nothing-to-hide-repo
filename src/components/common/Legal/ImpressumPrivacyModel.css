@@ -1,0 +1,12 @@
+.impressum-privacy-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  max-height: 60vh;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.impressum-privacy-modal-content * {
+  user-select: text;
+}

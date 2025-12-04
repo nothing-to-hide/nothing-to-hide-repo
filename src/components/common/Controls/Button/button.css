@@ -1,0 +1,44 @@
+@import url("../../../../app/style.css");
+
+.button {
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-large); /* Rounded button */
+  cursor: pointer;
+  padding: 10px 30px;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  font-weight: bold;
+  background: var(--primary-blue);
+    width: 100%;
+}
+
+.button:hover {
+  background-color: var(--accent-blue);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button-outlined {
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-large); /* Rounded button */
+    cursor: pointer;
+    padding: 10px 30px;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    font-weight: bold;
+    background: var(--dark-blue);
+}
+
+.button-outlined:hover {
+    background-color: var(--accent-blue);
+}
+
+.button-yes {
+  background-color: var(--success);
+}
+
+.button-no {
+  background-color: var(--error);
+}
